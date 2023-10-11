@@ -9,7 +9,7 @@ const AnimeList = ({ title, images, id }) => {
         alt=''
         width={350}
         height={350}
-        className='w-full max-h-64 object-cover'
+        className='w-full max-h-96 object-cover'
       />
       <h2 className='font-bold md:text-2xl sm:text-md p-4'>{title}</h2>
     </Link>
