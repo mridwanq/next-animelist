@@ -1,37 +1,19 @@
+import Header from '@/components/AnimeList/Header';
 import AnimeList from '@/components/AnimeList/index.';
-import Link from 'next/link';
 
 const Home = async () => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime?limit=8`
   );
-  const anime = await response.json();
+  const topAnime = await response.json();
 
   return (
-    <div>
-      <div className='flex justify-between items-center p-4'>
-        <h1 className='text-2xl font-bold'>MOST POPULAR</h1>
-        <Link
-          href='/popular'
-          className='md:text-xl text-md underline hover:text-cyan-500 transition-all'
-        >
-          Show all
-        </Link>
-      </div>
-      <div className='grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4 px-4'>
-        {anime.data.map((data) => {
-          return (
-            <div key={data.mal_id} className='shadow-xl'>
-              <AnimeList
-                title={data.title}
-                images={data.images.webp.image_url}
-                id={data.mal_id}
-              />
-            </div>
-          );
-        })}
-      </div>
-    </div>
+    <>
+      <section className='bg-gray-800'>
+        <Header title='Most Popular' linkTitle='Show All' linkHref='/popular' />
+        <AnimeList api={topAnime} />
+      </section>
+    </>
   );
 };
 
