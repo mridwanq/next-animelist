@@ -1,7 +1,7 @@
 import Header from '@/components/AnimeList/Header';
 import AnimeList from '@/components/AnimeList/index.';
 
-const Home = async () => {
+const Page = async () => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime?limit=8`
   );
@@ -17,4 +17,4 @@ const Home = async () => {
   );
 };
 
-export default Home;
+export default Page;
