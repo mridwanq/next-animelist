@@ -8,22 +8,20 @@ const InputSearch = () => {
   const router = useRouter();
 
   const handleSearch = (e) => {
-    e.preventDefault();
-    router.push(`/search/${searchRef.current.value}`);
-  };
-
-  const handleSubmit = (e) => {
-    if (e.key === 'Enter') {
-      handleSearch(e);
+    if (e.key === 'Enter' || e.type === 'click') {
+      e.preventDefault();
+      const keyword = searchRef.current.value;
+      router.push(`/search/${keyword}`);
     }
   };
+
   return (
     <div className='relative'>
       <input
         placeholder='search anime...'
         className='p-2 w-full rounded-md'
         ref={searchRef}
-        onKeyPress={handleSubmit}
+        onKeyPress={handleSearch}
       />
 
       <button className='absolute top-2 end-2' onClick={handleSearch}>
@@ -34,3 +32,5 @@ const InputSearch = () => {
 };
 
 export default InputSearch;
+
+

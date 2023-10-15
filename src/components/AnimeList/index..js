@@ -7,7 +7,10 @@ const AnimeList = ({ api }) => {
       {api.data.map((anime) => {
         return (
           // eslint-disable-next-line react/jsx-key
-          <Link href={`/${anime.mal_id}`} className='cursor-pointer'>
+          <Link
+            href={`/${anime.mal_id}`}
+            className='cursor-pointer text-color-primary  hover:text-color-accent transition-all'
+          >
             <Image
               src={anime.images.webp.image_url}
               alt=''
@@ -15,7 +18,7 @@ const AnimeList = ({ api }) => {
               height={350}
               className='w-full max-h-64 object-cover'
             />
-            <h2 className='font-bold md:text-2xl text-white sm:text-md p-4'>
+            <h2 className='font-bold md:text-2xl text-white sm:text-md p-4 '>
               {anime.title}
             </h2>
           </Link>
