@@ -9,7 +9,7 @@ const Page = async () => {
 
   return (
     <>
-      <section className='bg-gray-800'>
+      <section className='bg-color-secondary'>
         <Header title='Most Popular' linkTitle='Show All' linkHref='/popular' />
         <AnimeList api={topAnime} />
       </section>
