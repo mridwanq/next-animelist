@@ -8,7 +8,7 @@ const AnimeList = ({ api }) => {
         return (
           // eslint-disable-next-line react/jsx-key
           <Link
-            href={`/${anime.mal_id}`}
+            href={`/anime/${anime.mal_id}`}
             className='cursor-pointer text-color-primary  hover:text-color-accent transition-all'
             key={index}
           >
