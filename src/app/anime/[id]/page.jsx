@@ -1,6 +1,5 @@
 import { getAnimeResponse } from '@/app/lib/api-lib';
 import VideoPlayer from '@/components/Utilities/VideoPlayer';
-import { data } from 'autoprefixer';
 import Image from 'next/image';
 import React from 'react';
 
@@ -31,7 +30,7 @@ const Page = async ({ params: { id } }) => {
           <div>{anime.data.episodes}</div>
         </div>
       </div>
-      <div className='pt-4 px-4 sm:flex-nowrap flex flex-wrap gap-2 text-color-primary'>
+      <div className=' pt-4 px-4 sm:flex-nowrap flex flex-wrap gap-2 text-color-primary'>
         <Image
           className='w-full rounded object-cover'
           width={250}
