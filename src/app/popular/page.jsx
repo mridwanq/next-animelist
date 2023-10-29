@@ -3,7 +3,7 @@ import AnimeList from '@/components/AnimeList/index.';
 import HeaderMenu from '@/components/Utilities/HeaderMenu';
 import Pagination from '@/components/Utilities/Pagination';
 import React, { useEffect, useState } from 'react';
-import { getAnimeResponse } from '../lib/api-lib';
+import { getAnimeResponse } from '../../lib/api-lib';
 
 // eslint-disable-next-line @next/next/no-async-client-component
 const PopularPage = async () => {
