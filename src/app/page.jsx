@@ -16,7 +16,7 @@ const Page = async () => {
 
   return (
     <>
-      <section className='bg-color-secondary'>
+      <section className='bg-color-secondary py-24'>
         <Header title='Most Popular' linkTitle='Show All' linkHref='/popular' />
         <AnimeList api={topAnime} />
       </section>

@@ -7,8 +7,8 @@ const Page = async ({ params: { id } }) => {
   const anime = await getAnimeResponse(`anime/${id}`);
   return (
     <>
-      <div className='pt-4 px-4'>
-        <h2 className='text-2xl text-color-primary'>
+      <div className='pt-24 px-4'>
+        <h2 className='py-2 text-2xl text-color-primary'>
           {anime.data.title} - {anime.data.year}
         </h2>
       </div>
