@@ -18,9 +18,9 @@ img {
   -o-transition: 3s ease-all;
 }
 
-img:hover {
+/* img:hover {
   scale: 102%;
-}
+} */
 
 .spinner {
   width: 56px;
