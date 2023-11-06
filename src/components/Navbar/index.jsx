@@ -1,6 +1,17 @@
 import Link from 'next/link';
 import InputSearch from './InputSearch';
 import UserButtonAction from './UserActionButton';
+import {
+  BiHome,
+  BiCompass,
+  BiLogoDiscordAlt,
+  BiTime,
+  BiHelpCircle,
+  BiLogIn,
+} from 'react-icons/bi';
+import { LuLibrary, LuSettings } from 'react-icons/lu';
+import { HiDownload } from 'react-icons/hi';
+import { MdOutlineStreetview } from 'react-icons/md';
 
 const Navbar = () => {
   return (
