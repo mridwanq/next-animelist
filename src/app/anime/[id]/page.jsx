@@ -5,6 +5,8 @@ import React from 'react';
 import CollectionButton from '@/components/AnimeList/CollectionButton';
 import { authUserSession } from '@/lib/auth-libs';
 import prisma from '@/lib/prisma';
+import CommentInput from '@/components/AnimeList/CommentInput';
+import CommentBox from '@/components/AnimeList/CommentBox';
 
 const Page = async ({ params: { id } }) => {
   const anime = await getAnimeResponse(`anime/${id}`);
@@ -20,7 +22,12 @@ const Page = async ({ params: { id } }) => {
           {anime.data.title} - {anime.data.year}
         </h2>
         {!collection && user && (
-          <CollectionButton anime_mal_id={id} user_email={user.email} />
+          <CollectionButton
+            anime_mal_id={id}
+            user_email={user.email}
+            anime_image={anime.data.images.webp.image_url}
+            anime_title={anime.data.title}
+          />
         )}
       </div>
       <div className='pt-4 px-4 flex gap-2 text-color-primary overflow-x-auto'>
@@ -50,6 +57,19 @@ const Page = async ({ params: { id } }) => {
           alt={anime.data.images.jpg.image_url}
         />
         <p className='text-justify text-xl'>{anime.data.synopsis}</p>
+      </div>
+      <div className='p-4'>
+        <h3 className='text-color-primary text-2xl mb-2'>All Comments</h3>
+        <CommentBox anime_mal_id={id} />
+
+        {user && (
+          <CommentInput
+            anime_mal_id={id}
+            user_email={user?.email}
+            username={user?.name}
+            anime_title={anime.data.title}
+          />
+        )}
       </div>
       <div>
         <VideoPlayer youtubeId={anime.data.trailer.youtube_id} />
